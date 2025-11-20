@@ -16,12 +16,18 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load .env (backend/.env)
+import os # Make sure os is imported
+print(f"Looking for .env at: {BASE_DIR / '.env'}") # DEBUG PRINT
+
 try:
     from dotenv import load_dotenv
-    load_dotenv(BASE_DIR / ".env")
-except Exception:
-    pass
-
+    loaded = load_dotenv(BASE_DIR / ".env")
+    print(f"Dotenv loaded successfully: {loaded}") # DEBUG PRINT
+    print(f"API Key found: {'Yes' if os.environ.get('OPENAI_API_KEY') else 'No'}") # DEBUG PRINT
+except ImportError:
+    print("ERROR: python-dotenv is not installed! Run 'pip install python-dotenv'")
+except Exception as e:
+    print(f"ERROR loading .env: {e}")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 

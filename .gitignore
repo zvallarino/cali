@@ -12,3 +12,14 @@ venv/
 # Python cache (junk files)
 __pycache__/
 *.pyc
+
+# Specific Django DB (crucial to ignore this so you don't commit user data)
+db.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE settings (optional but recommended)
+.vscode/
+.idea/

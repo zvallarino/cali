@@ -16,7 +16,7 @@ class UserWordSerializer(serializers.ModelSerializer):
     word = WordSerializer()
     class Meta:
         model = UserWord
-        fields = ["id", "word", "miss_count", "hit_count", "created_at"]
+        fields = ["id", "word", "stats", "created_at"]
 
 class AddWordSerializer(serializers.Serializer):
     text = serializers.CharField()
