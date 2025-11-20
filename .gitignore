@@ -1,0 +1,14 @@
+# Python Virtual Environment
+.venv/
+venv/
+
+# Secrets and Environment variables
+.env
+*.env
+
+# Database
+*.sqlite3
+
+# Python cache (junk files)
+__pycache__/
+*.pyc
